@@ -21,6 +21,10 @@ Import-Module -Name Bandwidth -Force
 **** Get Mac address of a remote host
 Install-Script -Name Get-MacAddress
 
+**** Get Network statistics
+Install-Module -Name Network -Force
+Import-Module -Name Network
+
 #>
 
 #Displaying Latency (ms), Dowload bandwith (Mbps), Upload bandwidth (Mbps)
@@ -65,6 +69,5 @@ Start-MultiPing
 
 #measure average bandwidth's usage of the user/system
 Bandwidth
-
 
 
