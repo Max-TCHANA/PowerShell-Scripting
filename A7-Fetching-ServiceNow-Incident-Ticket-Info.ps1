@@ -1,7 +1,7 @@
 ﻿#My Servicenow username
 $SnowUsername = "admin"
 #My Servicenow password
-$SnowPlainPassword = "Shingouki84#"
+$SnowPlainPassword = "admin@123"
 #My Servicenow instance URL:https://dev81253.service-now.com
 $SnowBaseURL="https://dev81253.service-now.com/"
 #The ticket number of the existing ticket for which I want to retrieve related information
