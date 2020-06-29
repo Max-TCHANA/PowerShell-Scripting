@@ -3,7 +3,7 @@
  #>
  
 # Definition of the variable $arraysize . We consider $arraysize >= 1  
- $arraysize = 5
+ $arraysize = 10
 
 # Definition of the pace of left shift $paceofshift. We consider $paceofshift >= 0
  $paceofshift = 2

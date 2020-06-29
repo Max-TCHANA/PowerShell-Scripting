@@ -1,11 +1,26 @@
-﻿#My Servicenow username
+﻿#Error management
+#$ErrorActionPreference = "SilentlyContinue"
+#My Servicenow username
 $SnowUsername = "admin"
 #My Servicenow password
 $SnowPlainPassword = "Admin@123#"
 #My Servicenow instance URL:https://dev81253.service-now.com
 $SnowBaseURL="https://dev81253.service-now.com/"
-#The ticket number of the existing ticket for which I want to retrieve related information
-$TicketNumber ="INC0010111"
+
+################ Start of Input validation Process
+#Ticket Number prefix
+$Prefix="A"
+#Ticket Number suffix
+$Suffix ="111"
+
+
+    do {echo "Here is an example of valid input: INC0010111 "
+         $TicketNumber = Read-Host "Please Enter an Incident Number "
+         $Prefix=$TicketNumber[0] + $TicketNumber[1] + $TicketNumber[2]
+         $Suffix = $TicketNumber.remove(0,3)
+        
+     }While ($Prefix -ne "INC" -or $Suffix.Length -ne 7 -or ($Suffix -match "[^0-9]") -eq "True" )
+################ End of Input validation process
 
 #Authentication information
 $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $SnowUsername, $SnowPlainPassword))) 
@@ -27,3 +42,6 @@ $method = "get"
 
 #Displaying fetched information
 $response.ChildNodes.result
+
+#Cleanup
+#Remove-Variable -Name * 2> $null
