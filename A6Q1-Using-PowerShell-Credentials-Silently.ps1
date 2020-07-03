@@ -5,7 +5,7 @@
 #Getting password securely and storing it locally as a securestring. THIS HAS TO BE DONE JUST ONCE
 read-host -assecurestring | convertfrom-securestring | out-file C:\mysecurestring.txt
 
-$TargetServer = "1.1.2.23" 
+$TargetServer = "52.255.170.141" 
 $RemoteUser = "remote"
 $RemotePassword = Get-Content 'C:\mysecurestring.txt' | ConvertTo-SecureString
 #Storing credential in a variable
@@ -14,4 +14,4 @@ $Creds = new-object -typename System.Management.Automation.PSCredential -argumen
 
 #Using the Invoke-Command with the stored credentials
 
-Invoke-Command -ComputerName $TargetServer -Credential $Creds -ScriptBlock { ipconfig }
+Invoke-Command -ComputerName $TargetServer -Credential $Creds -ScriptBlock { ipconfig}
