@@ -122,7 +122,7 @@ Function Test-SQLConnection
     }
 
 ########################################################################################################
-############################### STEP4 Check Current Size < New Size  ###################################
+############################### STEP4 Increase File Size  ##############################################
 
     #Implementing SQL statements to increase Database file size
         Invoke-Sqlcmd -ServerInstance $DataBaseInstance -Username $UserName -Password $Password -Query "
