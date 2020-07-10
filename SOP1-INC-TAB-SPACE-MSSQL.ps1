@@ -44,10 +44,9 @@ Invoke-Command -ComputerName $TargetServer -Credential $Creds1 -ScriptBlock {
     }
     else
     {
-       $ReturnMessage = "Step 1: Failed : Database Instance does not exist. Unable to connect to the Database" 
        $ReturnCode =2
+       $ReturnMessage = "Step 1: Failed : Database Instance does not exist. Unable to connect to the Database. ReturnCode $ReturnCode" 
        $ReturnMessage
-       echo "ReturnCode $ReturnCode"
        exit
     }
 
