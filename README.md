@@ -1,2 +1,2 @@
-# AWIT-Coop-Activity-2-2020-06-10
+# PowerShell Scripting
 This is a repository for PowerShell Learning Activities purposes
